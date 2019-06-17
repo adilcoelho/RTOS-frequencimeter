@@ -15,11 +15,12 @@
 #include "driverlib/uart.h"
 #include "utils/uartstdio.h"
 #define MSGQUEUE_OBJECTS      4                                   // number of Message Queue Objects
-#define F_CLK 120e6
+#define F_CLK 24e6
 
-osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, threadControladora_id;
+osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, threadControladora_id, Timer1_thread_id, UART_thread_id, VUmeter_thread_id;
 osMessageQueueId_t mid_MsgQueue;                                   // message queue id
 osMutexId_t LEDmutex_id;
+osEventFlagsId_t freqAcquired;
 
 typedef struct {                                                   // object data type
   uint8_t LED;
@@ -53,28 +54,53 @@ void Timer1_ISR()
   HWREG(TIMER0_BASE+0x50)=0xFFFFFF; // reset timer
   TimerEnable(TIMER0_BASE, TIMER_A);
   TimerIntClear(TIMER1_BASE, TIMER_TIMA_TIMEOUT);
+  osThreadFlagsSet(Timer1_thread_id, 0x1);
 }
+
 
 static void
 PortJ_IntHandler(void)
 {
   GPIOIntClear(GPIO_PORTJ_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+  // envia mensagem (ou ativa flag) para informar a troca de escala
 }
  
 int Init_MsgQueue (void) {
   
   mid_MsgQueue = osMessageQueueNew(MSGQUEUE_OBJECTS, sizeof(MSGQUEUE_OBJ_t), NULL);
   if (!mid_MsgQueue) {
-    ; // Message Queue object not created, handle failure
+    
   }
   return(0);
 }
  
+void Timer1_thread(void* arg) {
+  while(1){
+    osThreadFlagsWait(0x1, osFlagsWaitAny, osWaitForever);
+    osEventFlagsSet(freqAcquired, 0x1);
+  }
+}
+
+void UART_thread(void* arg) {
+  ConfigureUART();
+  while(1){
+    osEventFlagsWait(freqAcquired, 0x1, osFlagsWaitAny, osWaitForever);
+    UARTprintf("TESTE DE ENVIO %d\n", SystemCoreClock);
+  }
+}
+
+void VUmeter_thread(void* arg) {
+  while(1){
+    osEventFlagsWait(freqAcquired, 0x1, osFlagsWaitAny, osWaitForever);
+    // atualiza os PWMs (faz a função da atual threadControladora)
+  }
+}
+
 void PWM_thread(void *arg){
   uint32_t tick;
   MSGQUEUE_OBJ_t msg;
   while(1){
-    osMessageQueueGet(mid_MsgQueue, &msg, NULL, 0);
+    osMessageQueueGet(mid_MsgQueue, &msg, NULL, osWaitForever);
     tick = osKernelGetTickCount();
     int atraso = msg.DC;
     osMutexAcquire(LEDmutex_id, osWaitForever);
@@ -92,38 +118,54 @@ void PWM_thread(void *arg){
 void threadControladora(void *arg){
   int8_t nivelAtual = 0;
   MSGQUEUE_OBJ_t msg;
-    for(nivelAtual = 0; nivelAtual < 5; nivelAtual++) {
+  while(1) {
+    /*
     msg.DC = nivelAtual;
     msg.LED = LED1;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, 0);
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     msg.DC = nivelAtual;
     msg.LED = LED2;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, 0);
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     msg.DC = nivelAtual;
     msg.LED = LED3;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, 0);
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    msg.DC = nivelAtual;
+    msg.LED = LED4;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    */
+ 
+    for(nivelAtual = 0; nivelAtual < 10; nivelAtual++) {
+    msg.DC = nivelAtual;
+    msg.LED = LED1;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    msg.DC = nivelAtual;
+    msg.LED = LED2;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    msg.DC = nivelAtual;
+    msg.LED = LED3;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     msg.DC = nivelAtual;
     msg.LED = LED4;
     osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     }
     
-  while(1) {
-    osThreadYield();
-  }
+  
     for(nivelAtual = 10; nivelAtual >= 0; nivelAtual--) {
     msg.DC = nivelAtual;
     msg.LED = LED1;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, 0);
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     msg.DC = nivelAtual;
     msg.LED = LED2;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, 0);
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     msg.DC = nivelAtual;
     msg.LED = LED3;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, 0);
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
     msg.DC = nivelAtual;
     msg.LED = LED4;
     osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    
     }
+  }
 }
 
 void GPIOInit() {
@@ -182,7 +224,15 @@ void main(void){
   PWM_thread2_id = osThreadNew(PWM_thread, NULL, NULL);
   PWM_thread3_id = osThreadNew(PWM_thread, NULL, NULL);
   PWM_thread4_id = osThreadNew(PWM_thread, NULL, NULL);
+  UART_thread_id = osThreadNew(UART_thread, NULL, NULL);
+  VUmeter_thread_id = osThreadNew(VUmeter_thread, NULL, NULL);
+  
+  Timer1_thread_id = osThreadNew(Timer1_thread, NULL, NULL);
+  osThreadSetPriority(Timer1_thread_id, osPriorityHigh);
 
+  
+  freqAcquired = osEventFlagsNew(NULL);
+  
   if(osKernelGetState() == osKernelReady)
   {
     

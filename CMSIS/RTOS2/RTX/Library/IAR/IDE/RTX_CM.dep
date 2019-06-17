@@ -1,285 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>2952855430</fileChecksum>
+    <fileChecksum>2084220323</fileChecksum>
     <configuration>
         <name>CM0</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_lib.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_mempool.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM0\Include\ARMCM0.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_timer.pbi</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_iccarm.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_version.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\Include\cmsis_os2.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_evr.pbi</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_cm.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_delay.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_msgqueue.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_evflags.pbi</file>
-            <file>$PROJ_DIR$\CM0\Obj\os_systick.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_system.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\core_cm0.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_mempool.pbi</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_system.pbi</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM0\Include\system_ARMCM0.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_timer.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\irq_cm0.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_semaphore.pbi</file>
             <file>$PROJ_DIR$\CM0\Obj\rtx_memory.pbi</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_msgqueue.pbi</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_mutex.pbi</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_thread.pbi</file>
-            <file>$PROJ_DIR$\RTE_Components.h</file>
-            <file>$PROJ_DIR$\..\..\..\Include\rtx_evr.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\Include\os_tick.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_delay.pbi</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_evr.o</file>
             <file>$PROJ_DIR$\CM0\Obj\rtx_thread.o</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_semaphore.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_compiler.h</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_evflags.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_memory.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_mutex.pbi</file>
             <file>$PROJ_DIR$\CM0\Obj\os_systick.pbi</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_c.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_msgqueue.pbi</file>
+            <file>$PROJ_DIR$\CM0\Obj\irq_cm0.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_evr.o</file>
             <file>$PROJ_DIR$\..\..\..\Config\RTX_Config.h</file>
-            <file>$PROJ_DIR$\..\..\..\Include\rtx_os.h</file>
-            <file>$PROJ_DIR$\..\RTX_CM0.a</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_c.h</file>
             <file>$PROJ_DIR$\CM0\Obj\rtx_mutex.o</file>
             <file>$PROJ_DIR$\CM0\Obj\rtx_kernel.pbi</file>
-            <file>$PROJ_DIR$\CM0\Obj\rtx_memory.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\RTE_Components.h</file>
             <file>$PROJ_DIR$\CM0\Obj\rtx_kernel.o</file>
-            <file>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm0.s</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\Include\os_tick.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_semaphore.o</file>
+            <file>$PROJ_DIR$\..\RTX_CM0.a</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_semaphore.pbi</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_delay.pbi</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_evflags.o</file>
+            <file>$PROJ_DIR$\..\..\..\Include\rtx_os.h</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_system.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_evflags.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_system.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm0.s</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</file>
             <file>$PROJ_DIR$\..\..\..\..\Source\os_systick.c</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_thread.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_cm.h</file>
+            <file>$PROJ_DIR$\..\..\..\Include\rtx_evr.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_lib.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_msgqueue.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_evr.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM0\Include\ARMCM0.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\core_cm0.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_mempool.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_timer.pbi</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_timer.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_system.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_delay.o</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_system.pbi</file>
+            <file>$PROJ_DIR$\..\..\..\..\Include\cmsis_os2.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\os_systick.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_evflags.pbi</file>
+            <file>$PROJ_DIR$\CM0\Obj\rtx_mempool.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM0\Include\system_ARMCM0.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>IARCHIVE</name>
-                    <file> 51</file>
+                    <file> 19</file>
                 </tool>
             </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 26</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 3</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 37 36 5 9 13 35 27 49 17 8 48 50 25 18 11 43 32 0 20 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm0.s</name>
-            <outputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 28</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 12</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 39</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 13 32 38 8 20 44 5 6 35 48 50 25 27 37 49 36 17 11 24 4 43 0 9 18 2 21 7</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 40</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 10</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 5 35 25 18 8 36 17 9 32 6 44 20 13 4 49 27 50 38</file>
-                </tool>
-            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 55</file>
+                    <file> 16</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 53</file>
+                    <file> 13</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 5 9 2 8 17 48 50 25 18 21 7 32 49 27 37 36 20 35 11 24 13 44 0 4 6 43 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 54</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 30</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 5 13 36 38 37 17 44 6 32 35 27 49 25 20 48 8 50 11 24 4 43 0 9 18 2 21 7</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 14</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 31</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 50 5 8 48 25 18 21 7 32 49 17 9 2 13 35 0 27 37 36 20 11 24 44 4 6 43 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 42</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 29</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 32 13 27 44 5 6 49 20 8 37 36 35 11 24 4 48 50 25 17 9 18 2 21 7 0 43 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_system.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 19</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 23</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 8 9 13 35 48 50 32 27 37 49 36 5 25 17 18 11 43 0 20 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 1</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 22</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 24 37 11 36 32 35 8 27 49 20 13 44 48 50 5 25 17 9 18 2 21 7 0 4 6 43 38</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 41</file>
-                </tool>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 34</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>BICOMP</name>
-                    <file> 36 5 43 32 37 25 18 11 13 35 27 49 17 9 8 48 50 20 38 0</file>
+                    <file> 49 66 48 60 46 11 23 50 68 51 63 14 9 47 17 40 44 15 39 67 56 10 42 62 53 41 3</file>
                 </tool>
             </inputs>
         </file>
@@ -288,17 +108,36 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 46</file>
+                    <file> 22</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 15</file>
+                    <file> 64</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 48 25 18 21 7 50 5 8 17 9 2 32 49 27 37 36 20 35 11 24 13 44 0 4 6 43 38</file>
+                    <file> 11 50 68 51 63 23 49 60 46 66 48 14 9 47 17 40 44 15 39 67 56 10 42 62 53 41 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23 49 60 11 50 68 51 63 14 9 46 66 48 56 15 42 47 17 40 44 39 67 10 62 53 41 3</file>
                 </tool>
             </inputs>
         </file>
@@ -307,17 +146,178 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 52</file>
+                    <file> 12</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 33</file>
+                    <file> 4</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 35 36 32 37 11 24 8 27 49 20 13 44 5 48 50 25 17 9 18 2 21 7 0 4 6 43 38</file>
+                    <file> 15 40 14 17 39 67 60 47 9 44 56 10 49 11 23 50 46 66 68 48 51 63 42 62 53 41 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 58</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 56 14 3 60 44 10 49 53 15 11 23 50 47 17 9 40 46 39 67 62 41 42 66 68 48 51 63</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_system.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 57</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 59</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 60 66 56 15 11 23 14 47 17 9 40 49 50 46 68 39 41 42 44 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 20</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14 56 47 10 49 53 9 44 60 17 40 15 39 67 62 11 23 50 46 66 68 48 51 63 42 41 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 40 49 41 14 17 50 68 39 56 15 47 9 46 66 60 11 23 44 3 42</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 55</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 54</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 17 40 49 66 56 15 47 9 46 60 11 23 50 68 39 41 14 42 44 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm0.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 45</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49 15 50 68 60 40 46 66 14 53 10 44 56 62 9 47 23 3</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 2</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 0</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 49 56 40 3 17 46 10 53 14 15 47 9 50 44 11 60 23 39 67 62 41 42 66 68 48 51 63</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 52</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 65</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 67 17 39 40 14 15 60 47 9 44 56 10 11 23 49 50 46 66 68 48 51 63 42 62 53 41 3</file>
                 </tool>
             </inputs>
         </file>
@@ -326,23 +326,26 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 16</file>
+                    <file> 61</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 47</file>
+                    <file> 5</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 5 9 2 13 44 4 35 32 18 24 37 20 21 7 6</file>
+                    <file> 49 66 48 56 10 62 15 14 68 67 17 44 51 63 53</file>
                 </tool>
             </inputs>
         </file>
         <forcedrebuild>
             <name>[MULTI_TOOL]</name>
             <tool>IARCHIVE</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
         </forcedrebuild>
     </configuration>
     <configuration>
@@ -352,253 +355,97 @@
             <name>[MULTI_TOOL]</name>
             <tool>IARCHIVE</tool>
         </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
     </configuration>
     <configuration>
         <name>CM4F</name>
         <outputs>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_mempool.o</file>
             <file>$PROJ_DIR$\CM4F\Obj\os_systick.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_timer.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_system.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_evr.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_delay.o</file>
             <file>$PROJ_DIR$\..\RTX_CM4F.a</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_msgqueue.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_kernel.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_mutex.o</file>
-            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
             <file>$PROJ_DIR$\CM4F\Obj\irq_cm4f.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_memory.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM4\Include\ARMCM4_FP.h</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_evflags.o</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\core_cm4.h</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_lib.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_iccarm.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_version.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\Include\cmsis_os2.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_cm.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_timer.o</file>
             <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM4\Include\system_ARMCM4.h</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_semaphore.o</file>
-            <file>$PROJ_DIR$\CM4F\Obj\rtx_thread.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_system.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_kernel.o</file>
             <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\mpu_armv7.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_thread.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_evflags.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_msgqueue.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_mempool.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_semaphore.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_memory.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\core_cm4.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\..\Device\ARM\ARMCM4\Include\ARMCM4_FP.h</file>
+            <file>$PROJ_DIR$\..\..\..\Config\RTX_Config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_c.h</file>
             <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
             <file>$PROJ_DIR$\RTE_Components.h</file>
-            <file>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm4f.s</file>
-            <file>$PROJ_DIR$\..\..\..\Include\rtx_evr.h</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_evr.o</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_delay.o</file>
             <file>$PROJ_DIR$\..\..\..\..\Include\os_tick.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_compiler.h</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_c.h</file>
-            <file>$PROJ_DIR$\..\..\..\Config\RTX_Config.h</file>
+            <file>$PROJ_DIR$\CM4F\Obj\rtx_mutex.o</file>
             <file>$PROJ_DIR$\..\..\..\Include\rtx_os.h</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_system.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</file>
-            <file>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_evflags.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</file>
             <file>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_system.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm4f.s</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</file>
             <file>$PROJ_DIR$\..\..\..\..\Source\os_systick.c</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_core_cm.h</file>
+            <file>$PROJ_DIR$\..\..\..\Include\rtx_evr.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\..\..\..\Source\rtx_lib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\Include\cmsis_os2.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\Core\Include\cmsis_version.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
             <outputs>
                 <tool>
                     <name>IARCHIVE</name>
-                    <file> 6</file>
+                    <file> 1</file>
                 </tool>
             </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm4f.s</name>
-            <outputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 11</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 2</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 5</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 4</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 32 18 33 26 21 25 31 24 40 23 17 10 36 20 38 43 44 34</file>
-                </tool>
-            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\Source\rtx_kernel.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 8</file>
+                    <file> 6</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 12</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 7</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 28</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_system.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 3</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 0</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 29</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
                 </tool>
             </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\Source\rtx_evflags.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 14</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
@@ -608,7 +455,166 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 16 32 18 33 26 21 25 31 24 42 34 13 15 23 19 40 17 10 30 27 22 39 37 20 38 43 44 36</file>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_msgqueue.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_mutex.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_delay.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_system.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 5</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_semaphore.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_thread.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_timer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 3</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\IAR\irq_cm4f.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 2</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_evr.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 48 49 21 46 55 56 50 47 19 51 53 15 43 52 13 18 27 22</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_memory.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 14</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\Source\rtx_mempool.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 45 48 49 21 46 55 56 50 47 20 22 17 16 51 54 19 53 15 7 4 42 44 25 52 13 18 27 43</file>
                 </tool>
             </inputs>
         </file>
@@ -617,15 +623,18 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 1</file>
+                    <file> 0</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 37 23 18 33 26 21 25 34 13 15 19 40 17 10 30 27</file>
+                    <file> 25 51 49 21 46 55 56 22 17 16 54 19 53 15 7 4</file>
                 </tool>
             </inputs>
         </file>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
     </configuration>
 </project>

@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\settings\tarefas.Debug.general.xcl" --backend -f "F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\settings\tarefas.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\settings\tarefas.Debug.general.xcl" --backend -f "H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\settings\tarefas.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\settings\tarefas.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\settings\tarefas.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\settings\tarefas.Debug.general.xcl" "--debug_file=%~1" --backend -f "H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\settings\tarefas.Debug.driver.xcl" 
 
 @echo off 
 :end
