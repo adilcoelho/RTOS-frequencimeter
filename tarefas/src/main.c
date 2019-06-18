@@ -21,6 +21,9 @@ osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, thr
 osMessageQueueId_t mid_MsgQueue;                                   // message queue id
 osMutexId_t LEDmutex_id;
 osEventFlagsId_t freqAcquired;
+uint8_t passagensTimer = 0;
+uint8_t passagensUART = 0;
+uint8_t passagensVU = 0;
 
 typedef struct {                                                   // object data type
   uint8_t LED;
@@ -77,6 +80,7 @@ int Init_MsgQueue (void) {
 void Timer1_thread(void* arg) {
   while(1){
     osThreadFlagsWait(0x1, osFlagsWaitAny, osWaitForever);
+    passagensTimer++;
     osEventFlagsSet(freqAcquired, 0x1);
   }
 }
@@ -84,23 +88,43 @@ void Timer1_thread(void* arg) {
 void UART_thread(void* arg) {
   ConfigureUART();
   while(1){
-    osEventFlagsWait(freqAcquired, 0x1, osFlagsWaitAny, osWaitForever);
+    osEventFlagsWait(freqAcquired, 0x1, osFlagsNoClear, osWaitForever);
+    passagensUART++;
     UARTprintf("TESTE DE ENVIO %d\n", SystemCoreClock);
   }
 }
 
 void VUmeter_thread(void* arg) {
+  int8_t nivelAtual = 0;
+  MSGQUEUE_OBJ_t msg;
   while(1){
+ 
+    for(nivelAtual = 0; nivelAtual < 10; nivelAtual++) {
     osEventFlagsWait(freqAcquired, 0x1, osFlagsWaitAny, osWaitForever);
-    // atualiza os PWMs (faz a função da atual threadControladora)
+    passagensVU++;
+    msg.DC = nivelAtual;
+    msg.LED = LED1;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    msg.DC = nivelAtual;
+    msg.LED = LED2;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    msg.DC = nivelAtual;
+    msg.LED = LED3;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    msg.DC = nivelAtual;
+    msg.LED = LED4;
+    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
+    }
+    passagensTimer  = passagensTimer + passagensUART + passagensVU;
   }
 }
 
 void PWM_thread(void *arg){
   uint32_t tick;
   MSGQUEUE_OBJ_t msg;
+   osMessageQueueGet(mid_MsgQueue, &msg, NULL, osWaitForever);
   while(1){
-    osMessageQueueGet(mid_MsgQueue, &msg, NULL, osWaitForever);
+    osMessageQueueGet(mid_MsgQueue, &msg, NULL, 0);
     tick = osKernelGetTickCount();
     int atraso = msg.DC;
     osMutexAcquire(LEDmutex_id, osWaitForever);
@@ -115,58 +139,7 @@ void PWM_thread(void *arg){
   } 
 } 
 
-void threadControladora(void *arg){
-  int8_t nivelAtual = 0;
-  MSGQUEUE_OBJ_t msg;
-  while(1) {
-    /*
-    msg.DC = nivelAtual;
-    msg.LED = LED1;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED2;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED3;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED4;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    */
- 
-    for(nivelAtual = 0; nivelAtual < 10; nivelAtual++) {
-    msg.DC = nivelAtual;
-    msg.LED = LED1;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED2;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED3;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED4;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    }
-    
-  
-    for(nivelAtual = 10; nivelAtual >= 0; nivelAtual--) {
-    msg.DC = nivelAtual;
-    msg.LED = LED1;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED2;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED3;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    msg.DC = nivelAtual;
-    msg.LED = LED4;
-    osMessageQueuePut(mid_MsgQueue, &msg, 0, osWaitForever);
-    
-    }
-  }
-}
+
 
 void GPIOInit() {
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOJ); 
@@ -219,13 +192,14 @@ void main(void){
   LEDmutex_id = osMutexNew(&LEDmutex_attr);
 
   Init_MsgQueue();
-  threadControladora_id = osThreadNew(threadControladora, NULL, NULL);
+  //threadControladora_id = osThreadNew(threadControladora, NULL, NULL);
+  
+  VUmeter_thread_id = osThreadNew(VUmeter_thread, NULL, NULL);
   PWM_thread1_id = osThreadNew(PWM_thread, NULL, NULL);
   PWM_thread2_id = osThreadNew(PWM_thread, NULL, NULL);
   PWM_thread3_id = osThreadNew(PWM_thread, NULL, NULL);
   PWM_thread4_id = osThreadNew(PWM_thread, NULL, NULL);
   UART_thread_id = osThreadNew(UART_thread, NULL, NULL);
-  VUmeter_thread_id = osThreadNew(VUmeter_thread, NULL, NULL);
   
   Timer1_thread_id = osThreadNew(Timer1_thread, NULL, NULL);
   osThreadSetPriority(Timer1_thread_id, osPriorityHigh);
@@ -235,7 +209,6 @@ void main(void){
   
   if(osKernelGetState() == osKernelReady)
   {
-    
     TimerEnable(TIMER0_BASE, TIMER_A);
     TimerEnable(TIMER1_BASE, TIMER_A);
     osKernelStart();

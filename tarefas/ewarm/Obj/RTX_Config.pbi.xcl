@@ -1,23 +1,23 @@
-"F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\src\RTX_Config.c"
+"H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\src\RTX_Config.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\src
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\src
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..\..\..
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..\..\..
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..\driverlib
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..\driverlib
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..\Device\ARM\ARMCM4\Include
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..\Device\ARM\ARMCM4\Include
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..\CMSIS\RTOS2\Include
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..\CMSIS\RTOS2\Include
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..\CMSIS\RTOS2\RTX\Include
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..\CMSIS\RTOS2\RTX\Include
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\tarefas\..\CMSIS\RTOS2\RTX\Library\IAR\IDE
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\tarefas\..\CMSIS\RTOS2\RTX\Library\IAR\IDE
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\Core\Include
 -I
@@ -27,19 +27,19 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\inc\c
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo
+H:\UTFPR\8Periodo\Sistemas Embarcados
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\driverlib
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\driverlib
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\Device\ARM\ARMCM4\Include
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\Device\ARM\ARMCM4\Include
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\CMSIS\RTOS2\Include
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\CMSIS\RTOS2\Include
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\CMSIS\RTOS2\RTX\Include
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\CMSIS\RTOS2\RTX\Include
 -I
-F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\CMSIS\RTOS2\RTX\Library\IAR\IDE
+H:\UTFPR\8Periodo\Sistemas Embarcados\Laboratorio 3\RTOS-frequencimeter\CMSIS\RTOS2\RTX\Library\IAR\IDE
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\arm\CMSIS\Core\Include
 -I

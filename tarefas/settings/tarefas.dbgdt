@@ -742,7 +742,7 @@
             <IarPane-34090>
                 <expressions>
                     <item>msg</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
