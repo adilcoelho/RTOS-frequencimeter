@@ -63,5 +63,5 @@ void SystemInit(void){
                                               SYSCTL_OSC_MAIN |
                                               SYSCTL_USE_PLL |
                                               SYSCTL_CFG_VCO_480),
-                                              25000000); // 120MHz
+                                              64000000); // 64 MHz
 } // SystemInit

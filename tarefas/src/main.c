@@ -20,9 +20,9 @@
 
 
 osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, threadControladora_id, Timer1_thread_id, UART_thread_id, VUmeter_thread_id;
-osMessageQueueId_t mid_MsgQueue;                                   // message queue id
+osMessageQueueId_t mid_MsgQueue, freqChange;                                   // message queue id
 osMutexId_t LEDmutex_id;
-osEventFlagsId_t freqAcquired;
+osEventFlagsId_t freqEvents; // 0x1 = freqAcquired; 0x2 = freqScaleChange ?
 
 void ConfigureUART(void);
 
@@ -51,7 +51,8 @@ static void
 PortJ_IntHandler(void)
 {
   GPIOIntClear(GPIO_PORTJ_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-  // envia mensagem (ou ativa flag) para informar a troca de escala
+  
+  //osEventFlagsSet(freqEvents, 0x2); // botao foi apertado, indica o 
 }
  
 int Init_MsgQueue (void) {
@@ -68,23 +69,22 @@ void Timer1_thread(void* arg) {
     osThreadFlagsWait(0x1, osFlagsWaitAny, osWaitForever);
     // aqui deve acontecer o teste de mudança de escala solicitada, vai mudar o load do Timer1 e vai alterar a escala de acordo com o necessário
     // a mudança devera ser efetivada somente quando uma nova Timer1_ISR for chamada
-    osEventFlagsSet(freqAcquired, 0x1);
+    osEventFlagsSet(freqEvents, 0x1);
   }
 }
 
 void UART_thread(void* arg) {
   ConfigureUART();
   while(1){
-    osEventFlagsWait(freqAcquired, 0x1, osFlagsNoClear, osWaitForever);
+    osEventFlagsWait(freqEvents, 0x1, osFlagsNoClear, osWaitForever);
     UARTprintf("frequencia: %d\n", freq); // deve permitir mudar de escala no futuro
   }
 }
 
 void VUmeter_thread(void* arg) {
-  uint32_t nivelAtual = 0;
   MSGQUEUE_OBJ_t msg;
   while(1){
-    osEventFlagsWait(freqAcquired, 0x1, osFlagsWaitAny, osWaitForever);
+    osEventFlagsWait(freqEvents, 0x1, osFlagsWaitAny, osWaitForever);
     // faz a conta para saber o que mandar para cada led
 
     uint32_t LEDS = freq * 4 / (FUNDO_DE_ESCALA_HZ / 10); // tem que permitir mudar de escala no futuro
@@ -235,7 +235,7 @@ void main(void){
   osThreadSetPriority(Timer1_thread_id, osPriorityHigh);
 
   
-  freqAcquired = osEventFlagsNew(NULL);
+  freqEvents = osEventFlagsNew(NULL);
   
   if(osKernelGetState() == osKernelReady)
   {
