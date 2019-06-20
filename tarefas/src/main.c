@@ -20,9 +20,11 @@
 
 
 osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, threadControladora_id, Timer1_thread_id, UART_thread_id, VUmeter_thread_id;
-osMessageQueueId_t mid_MsgQueue, freqChange;                                   // message queue id
+osMessageQueueId_t mid_MsgQueue;                                   // message queue id
 osMutexId_t LEDmutex_id;
 osEventFlagsId_t freqEvents; // 0x1 = freqAcquired; 0x2 = freqScaleChange ?
+
+enum freqEvents_enum {freqAcquired = 0x1, freqScaleChange};
 
 void ConfigureUART(void);
 
@@ -31,7 +33,6 @@ typedef struct {                                                   // object dat
   uint8_t LED;
   uint8_t DC;
 } MSGQUEUE_OBJ_t;
-
 
 
 uint32_t freq;
@@ -51,8 +52,7 @@ static void
 PortJ_IntHandler(void)
 {
   GPIOIntClear(GPIO_PORTJ_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-  
-  //osEventFlagsSet(freqEvents, 0x2); // botao foi apertado, indica o 
+  osEventFlagsSet(freqEvents, 0x2); // botao foi apertado, indica a troca de escala
 }
  
 int Init_MsgQueue (void) {
@@ -67,8 +67,13 @@ int Init_MsgQueue (void) {
 void Timer1_thread(void* arg) {
   while(1){
     osThreadFlagsWait(0x1, osFlagsWaitAny, osWaitForever);
+    uint32_t freqChange = osEventFlagsWait(freqEvents, 0x2, osFlagsNoClear, 0);
+    osEventFlagsClear(freqEvents, 0x2);
+    if (freqChange == 0x2) // ------------------------------------
+    {
+      // muda a escala, mudando o load do timer e mudando uma variavel dedicada a isso.
+    }
     // aqui deve acontecer o teste de mudança de escala solicitada, vai mudar o load do Timer1 e vai alterar a escala de acordo com o necessário
-    // a mudança devera ser efetivada somente quando uma nova Timer1_ISR for chamada
     osEventFlagsSet(freqEvents, 0x1);
   }
 }
@@ -218,6 +223,7 @@ void main(void){
   LEDmutex_id = osMutexNew(&LEDmutex_attr);
 
   Init_MsgQueue();
+  
   //threadControladora_id = osThreadNew(threadControladora, NULL, NULL);
   
   VUmeter_thread_id = osThreadNew(VUmeter_thread, NULL, NULL);
