@@ -19,12 +19,12 @@
 #define FUNDO_DE_ESCALA_kHZ 1e6 
 
 
-osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, threadControladora_id, Timer1_thread_id, UART_thread_id, VUmeter_thread_id;
+osThreadId_t PWM_thread1_id, PWM_thread2_id, PWM_thread3_id, PWM_thread4_id, threadControladora_id, Timer1_thread_id, RangeChange_thread_id, UART_thread_id, VUmeter_thread_id;
 osMessageQueueId_t mid_MsgQueue;                                   // message queue id
 osMutexId_t LEDmutex_id;
-osEventFlagsId_t freqEvents; // 0x1 = freqAcquired; 0x2 = freqScaleChange ?
+osEventFlagsId_t freqEvents; // 0x1 = freqAcquired; 0x2 = freqRangeChange ?
 
-enum freqEvents_enum {freqAcquired = 0x1, freqScaleChange};
+enum freqEvents_enum {freqAcquired = 0x1, freqRangeChange};
 
 void ConfigureUART(void);
 
@@ -36,6 +36,7 @@ typedef struct {                                                   // object dat
 
 
 uint32_t freq;
+uint8_t escala = 0, rangeChange = 0; // 0: Hz; 1: kHz
 
 void Timer1_ISR() 
 {
@@ -52,7 +53,7 @@ static void
 PortJ_IntHandler(void)
 {
   GPIOIntClear(GPIO_PORTJ_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-  osEventFlagsSet(freqEvents, 0x2); // botao foi apertado, indica a troca de escala
+  osEventFlagsSet(freqEvents, freqRangeChange); // botao foi apertado, indica a troca de escala
 }
  
 int Init_MsgQueue (void) {
@@ -63,36 +64,47 @@ int Init_MsgQueue (void) {
   }
   return(0);
 }
+
+void RangeChange_thread(void* arg) {
+  while(1) {
+      uint32_t freqChange = osEventFlagsWait(freqEvents, freqRangeChange, osFlagsWaitAny, osWaitForever);
+    //osEventFlagsClear(freqEvents, freqRangeChange);
+    
+      escala ^= 1; // muda a escala, mudando o load do timer
+      TimerLoadSet(TIMER1_BASE, TIMER_A, escala? SystemCoreClock/1000 : SystemCoreClock);
+    
+  }
+  
+}
  
 void Timer1_thread(void* arg) {
   while(1){
     osThreadFlagsWait(0x1, osFlagsWaitAny, osWaitForever);
-    uint32_t freqChange = osEventFlagsWait(freqEvents, 0x2, osFlagsNoClear, 0);
-    osEventFlagsClear(freqEvents, 0x2);
-    if (freqChange == 0x2) // ------------------------------------
-    {
-      // muda a escala, mudando o load do timer e mudando uma variavel dedicada a isso.
-    }
+    
     // aqui deve acontecer o teste de mudança de escala solicitada, vai mudar o load do Timer1 e vai alterar a escala de acordo com o necessário
-    osEventFlagsSet(freqEvents, 0x1);
+    osEventFlagsSet(freqEvents, freqAcquired);
   }
 }
 
 void UART_thread(void* arg) {
   ConfigureUART();
   while(1){
-    osEventFlagsWait(freqEvents, 0x1, osFlagsNoClear, osWaitForever);
-    UARTprintf("frequencia: %d\n", freq); // deve permitir mudar de escala no futuro
+    osEventFlagsWait(freqEvents, freqAcquired, osFlagsNoClear, osWaitForever);
+    UARTprintf("%c%c%c%c%c%c%c%c", 27, '[', '2', 'J', 27, '[', 'H'); // limpa a tela do PuTTy
+    UARTprintf("frequencia: %d %s\n", freq, escala? "kHz" : "Hz" );
+    if(escala)
+      osDelay(10);
   }
 }
 
 void VUmeter_thread(void* arg) {
   MSGQUEUE_OBJ_t msg;
   while(1){
-    osEventFlagsWait(freqEvents, 0x1, osFlagsWaitAny, osWaitForever);
+    osEventFlagsWait(freqEvents, freqAcquired, osFlagsNoClear, osWaitForever);
+    osEventFlagsClear(freqEvents, freqAcquired);
     // faz a conta para saber o que mandar para cada led
-
-    uint32_t LEDS = freq * 4 / (FUNDO_DE_ESCALA_HZ / 10); // tem que permitir mudar de escala no futuro
+    
+    uint32_t LEDS = freq * 4 / ((escala? 100  : FUNDO_DE_ESCALA_HZ/10) ); // tem que permitir mudar de escala no futuro
     
     if (LEDS >= 10){
       msg.DC = 10;
@@ -239,6 +251,8 @@ void main(void){
   
   Timer1_thread_id = osThreadNew(Timer1_thread, NULL, NULL);
   osThreadSetPriority(Timer1_thread_id, osPriorityHigh);
+  RangeChange_thread_id = osThreadNew(RangeChange_thread, NULL, NULL);
+  osThreadSetPriority(RangeChange_thread_id, osPriorityHigh);
 
   
   freqEvents = osEventFlagsNew(NULL);
