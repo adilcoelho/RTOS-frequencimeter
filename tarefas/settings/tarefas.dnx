@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <settings>
     <LMIFTDIDriver>
-        <LMIFTDIserialNo>0F00ABCA</LMIFTDIserialNo>
+        <LMIFTDIserialNo>0F008BD6</LMIFTDIserialNo>
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DebugChecksum>
-        <Checksum>1400695288</Checksum>
+        <Checksum>1605090169</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -38,7 +38,7 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints>
-        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\src\main.c}.145.7" 0 0 0 0 "" 0 ""</Bp0>
+        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\src\main.c}.0.1" 0 0 0 0 "" 0 ""</Bp0>
         <Count>1</Count>
     </Breakpoints>
     <TermIOLog>
@@ -51,7 +51,9 @@
         <Category>_ 0</Category>
     </LogFile>
     <Aliases>
-        <Count>0</Count>
+        <A0>_ "F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\driverlib\interrupt.c" ""</A0>
+        <A1>_ "F:\OneDrive\OneDrive - alunos.utfpr.edu.br\UTFPR\Engenharia\8Periodo\Sistemas Embarcados\Tiva_RTOS2_IAR8\driverlib\uart.c" ""</A1>
+        <Count>2</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
     <CallStackLog>
